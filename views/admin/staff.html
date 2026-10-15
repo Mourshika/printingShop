@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff Users - PrintShop Admin</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="admin-page">
+  <div class="admin">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <main class="admin-main">
+      <button class="btn secondary menu-toggle" type="button">&#9776; Menu</button>
+
+      <div class="page-head"><h1>Staff Users</h1><button class="btn" id="addBtn">+ Add user</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Username</th><th>Full name</th><th>Role</th><th>Created</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+
+      <dialog id="dlg"><form id="form" novalidate>
+        <h2 id="dlgTitle">User</h2>
+        <input type="hidden" name="id">
+        <label for="u_user">Username</label><input id="u_user" name="username" maxlength="30" autocomplete="off">
+        <label for="u_name">Full name</label><input id="u_name" name="full_name" maxlength="100">
+        <label for="u_role">Role</label><select id="u_role" name="role"><option value="staff">Staff</option><option value="admin">Admin</option></select>
+        <label for="u_pass">Password <span class="hint" id="passHint"></span></label><input id="u_pass" name="password" type="password" autocomplete="new-password">
+        <div class="dialog-actions"><button type="button" class="btn secondary" id="cancelBtn">Cancel</button><button class="btn" type="submit">Save</button></div>
+      </form></dialog>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/admin-staff.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports - PrintShop Admin</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="admin-page">
+  <div class="admin">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <main class="admin-main">
+      <button class="btn secondary menu-toggle" type="button">&#9776; Menu</button>
+
+      <div class="page-head"><h1>Reports</h1><div><a class="btn secondary" id="csvBtn" href="/api/reports/sales.csv">Download CSV</a> <button class="btn" id="printBtn" type="button">Print</button></div></div>
+      <div class="toolbar"><label for="from" style="margin:0">From</label><input type="date" id="from"><label for="to" style="margin:0">To</label><input type="date" id="to"><button class="btn" id="apply" type="button">Apply</button><button class="btn secondary" id="reset" type="button">Reset</button></div>
+      <div class="two-col">
+        <section><h2>Daily sales (paid orders)</h2><div class="table-wrap"><table><thead><tr><th>Date</th><th class="num">Orders</th><th class="num">Revenue</th></tr></thead><tbody id="salesRows"></tbody><tfoot><tr><th>Total</th><th class="num" id="totOrders"></th><th class="num" id="totRev"></th></tr></tfoot></table></div></section>
+        <section><h2>Revenue by payment method</h2><div class="table-wrap"><table><thead><tr><th>Method</th><th class="num">Payments</th><th class="num">Amount</th></tr></thead><tbody id="methodRows"></tbody></table></div></section>
+      </div>
+      <section style="margin-top:1rem"><h2>Top services</h2><div class="table-wrap"><table><thead><tr><th>Service</th><th>Category</th><th class="num">Qty sold</th><th class="num">Revenue</th></tr></thead><tbody id="topRows"></tbody></table></div></section>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/admin-reports.js"></script>
+</body>
+</html>

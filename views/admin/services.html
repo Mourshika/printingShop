@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services - PrintShop Admin</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="admin-page">
+  <div class="admin">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <main class="admin-main">
+      <button class="btn secondary menu-toggle" type="button">&#9776; Menu</button>
+
+      <div class="page-head"><h1>Services &amp; Pricing</h1><button class="btn" id="addBtn">+ Add service</button></div>
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="Search services..." aria-label="Search">
+        <select id="catFilter" aria-label="Category"><option value="">All categories</option></select>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Category</th><th>Unit</th><th class="num">Price</th><th>Bulk price</th><th>Status</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+
+      <dialog id="dlg"><form id="form" novalidate>
+        <h2 id="dlgTitle">Service</h2>
+        <input type="hidden" name="id">
+        <div class="form-row">
+          <div><label for="s_name">Name</label><input id="s_name" name="name" maxlength="100"></div>
+          <div><label for="s_cat">Category</label><input id="s_cat" name="category" list="cats" maxlength="50"><datalist id="cats"></datalist></div>
+        </div>
+        <label for="s_desc">Description</label><input id="s_desc" name="description" maxlength="255">
+        <div class="form-row">
+          <div><label for="s_unit">Unit</label><input id="s_unit" name="unit" value="page" maxlength="20"></div>
+          <div><label for="s_price">Price (Rs.)</label><input id="s_price" name="price" type="number" step="0.01" min="0"></div>
+        </div>
+        <div class="form-row">
+          <div><label for="s_bq">Bulk quantity (optional)</label><input id="s_bq" name="bulk_qty" type="number" min="2"></div>
+          <div><label for="s_bp">Bulk price (optional)</label><input id="s_bp" name="bulk_price" type="number" step="0.01" min="0"></div>
+        </div>
+        <label for="s_act">Status</label>
+        <select id="s_act" name="is_active"><option value="1">Active</option><option value="0">Inactive</option></select>
+        <div class="dialog-actions"><button type="button" class="btn secondary" id="cancelBtn">Cancel</button><button class="btn" type="submit">Save</button></div>
+      </form></dialog>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/admin-services.js"></script>
+</body>
+</html>

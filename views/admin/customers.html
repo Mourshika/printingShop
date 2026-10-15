@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customers - PrintShop Admin</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="admin-page">
+  <div class="admin">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <main class="admin-main">
+      <button class="btn secondary menu-toggle" type="button">&#9776; Menu</button>
+
+      <div class="page-head"><h1>Customers</h1><button class="btn" id="addBtn">+ Add customer</button></div>
+      <div class="toolbar"><input type="search" id="search" placeholder="Search by name, phone or email..." aria-label="Search"></div>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Address</th><th class="num">Orders</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+
+      <dialog id="dlg"><form id="form" novalidate>
+        <h2 id="dlgTitle">Customer</h2>
+        <input type="hidden" name="id">
+        <label for="c_name">Full name</label><input id="c_name" name="name" maxlength="100">
+        <div class="form-row">
+          <div><label for="c_phone">Phone</label><input id="c_phone" name="phone" maxlength="20"></div>
+          <div><label for="c_email">Email (optional)</label><input id="c_email" name="email" type="email" maxlength="100"></div>
+        </div>
+        <label for="c_addr">Address (optional)</label><input id="c_addr" name="address" maxlength="255">
+        <div class="dialog-actions"><button type="button" class="btn secondary" id="cancelBtn">Cancel</button><button class="btn" type="submit">Save</button></div>
+      </form></dialog>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/admin-customers.js"></script>
+</body>
+</html>

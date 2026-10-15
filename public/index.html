@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMORA DIGITAL - Printing &amp; Photocopy Services</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="public-site">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="EMORA DIGITAL home"><img src="/images/emora-logo.png" alt="EMORA DIGITAL"></a>
+      <nav class="site-nav" aria-label="Main menu">
+        <a href="#services">Services</a>
+        <a href="#track">Track Order</a>
+        <a href="/login.html">Staff Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Fast, Affordable Printing &amp; Photocopying</h1>
+      <p>Photocopies, document printing, binding, lamination, photos and banners. Bulk discounts available.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="services" class="block">
+      <h2>Our Services &amp; Prices</h2>
+      <div class="toolbar">
+        <input type="search" id="searchBox" placeholder="Search services..." aria-label="Search services">
+        <select id="categoryFilter" aria-label="Filter by category"><option value="">All categories</option></select>
+      </div>
+      <div id="serviceGrid" class="grid"></div>
+    </section>
+
+    <section id="track" class="block">
+      <h2>Track Your Order</h2>
+      <div class="card" style="max-width:520px">
+        <form id="trackForm" novalidate>
+          <label for="order_no">Order number</label>
+          <input id="order_no" name="order_no" placeholder="e.g. PS12345678">
+          <div class="field-error"></div>
+          <label for="phone">Phone number used for the order</label>
+          <input id="phone" name="phone" placeholder="0771234567">
+          <div class="field-error"></div>
+          <p><button class="btn" type="submit">Track</button></p>
+        </form>
+        <div id="trackResult" class="track-result" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">&copy; 2026 EMORA DIGITAL - Printing &amp; Photocopy Shop Management System</footer>
+  <div id="toast" role="status"></div>
+
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>

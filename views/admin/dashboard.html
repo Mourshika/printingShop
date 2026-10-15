@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - PrintShop Admin</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="admin-page dashboard-page">
+  <div class="admin">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <main class="admin-main">
+      <button class="btn secondary menu-toggle" type="button">&#9776; Menu</button>
+
+      <div class="page-head"><h1>Dashboard</h1><span class="hint" id="today"></span></div>
+      <section class="stats" id="stats" aria-label="Key figures"></section>
+      <div class="two-col">
+        <section class="card"><h2>Revenue - last 7 days</h2><div id="bars" class="bars"></div></section>
+        <section class="card"><h2>Orders by status</h2><div id="statusList"></div></section>
+      </div>
+      <section style="margin-top:1rem"><h2>Recent orders</h2>
+        <div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Status</th><th>Payment</th><th class="num">Total</th></tr></thead><tbody id="recent"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/admin-dashboard.js"></script>
+</body>
+</html>

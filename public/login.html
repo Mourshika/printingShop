@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff Login - EMORA DIGITAL</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="login-page">
+  <main class="container">
+    <div class="card login-card">
+      <h1 class="brand"><img src="/images/emora-logo.png" alt="EMORA DIGITAL"></h1>
+      <p class="hint">Staff &amp; admin login</p>
+      <form id="loginForm" novalidate>
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" autofocus>
+        <div class="field-error"></div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password">
+        <div class="field-error"></div>
+        <p id="loginError" class="field-error" role="alert"></p>
+        <button class="btn" type="submit" style="width:100%">Login</button>
+      </form>
+      <p class="hint" style="text-align:center"><a href="/">&larr; Back to website</a></p>
+    </div>
+  </main>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

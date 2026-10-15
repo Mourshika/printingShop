@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orders - PrintShop Admin</title>
+  <link rel="stylesheet" href="/css/style.css?v=emora-gradient-20261014">
+</head>
+<body class="admin-page">
+  <div class="admin">
+    <aside id="sidebar" class="sidebar" aria-label="Sidebar"></aside>
+    <main class="admin-main">
+      <button class="btn secondary menu-toggle" type="button">&#9776; Menu</button>
+
+      <div class="page-head"><h1>Orders</h1><button class="btn" id="addBtn">+ New order</button></div>
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="Order no, customer, phone..." aria-label="Search">
+        <select id="statusFilter" aria-label="Status"><option value="">All statuses</option><option>pending</option><option>processing</option><option>ready</option><option>completed</option><option>cancelled</option></select>
+        <select id="payFilter" aria-label="Payment"><option value="">All payments</option><option value="unpaid">Unpaid</option><option value="paid">Paid</option></select>
+        <input type="date" id="from" aria-label="From date"><input type="date" id="to" aria-label="To date">
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Date</th><th class="num">Total</th><th>Status</th><th>Payment</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table></div>
+
+      <dialog id="dlg"><form id="form" novalidate>
+        <h2>New order</h2>
+        <label for="o_cust">Customer</label><select id="o_cust" name="customer_id"><option value="">Select customer...</option></select>
+        <div class="field-error"></div>
+        <label>Items</label>
+        <div id="items"></div>
+        <button type="button" class="btn secondary small" id="addItem">+ Add item</button>
+        <label for="o_notes">Notes (optional)</label><input id="o_notes" name="notes" maxlength="255">
+        <div class="total-line">Total: <span id="orderTotal">Rs. 0.00</span></div>
+        <p class="hint">Bulk prices are applied automatically. Final price is confirmed by the server.</p>
+        <div class="dialog-actions"><button type="button" class="btn secondary" id="cancelBtn">Cancel</button><button class="btn" type="submit">Create order</button></div>
+      </form></dialog>
+
+      <dialog id="viewDlg"><div id="viewBody"></div>
+        <div class="dialog-actions"><button class="btn secondary" id="printBtn" type="button">Print invoice</button><button class="btn" id="closeView" type="button">Close</button></div>
+      </dialog>
+
+      <dialog id="payDlg"><form id="payForm" novalidate>
+        <h2>Payment (mock gateway)</h2>
+        <p id="payInfo"></p>
+        <input type="hidden" name="order_id">
+        <label for="p_method">Method</label>
+        <select id="p_method" name="method"><option value="cash">Cash</option><option value="card">Card</option><option value="online">Online (sandbox)</option></select>
+        <div id="cardBox" style="display:none">
+          <label for="p_card">Card number</label><input id="p_card" name="card_number" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="23">
+          <div class="field-error"></div>
+          <p class="hint">Test cards: 4242 4242 4242 4242 (approved), 4000 0000 0000 0002 (declined).</p>
+        </div>
+        <p id="payError" class="field-error" role="alert"></p>
+        <div class="dialog-actions"><button type="button" class="btn secondary" id="payCancel">Cancel</button><button class="btn" type="submit">Pay now</button></div>
+      </form></dialog>
+    </main>
+  </div>
+  <div id="toast" role="status"></div>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/js/common.js?v=emora-gradient-20261014"></script>
+  <script src="/js/admin-orders.js"></script>
+</body>
+</html>
